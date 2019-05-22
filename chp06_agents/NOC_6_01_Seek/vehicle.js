@@ -40,6 +40,7 @@ class Vehicle {
     desired.setMag(this.maxspeed);
 
     // Steering = Desired minus velocity
+    //steering f = desired - vel
     var steer = p5.Vector.sub(desired, this.velocity);
     steer.limit(this.maxforce); // Limit to maximum steering force
 
