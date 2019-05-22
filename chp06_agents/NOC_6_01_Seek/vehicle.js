@@ -38,11 +38,9 @@ class Vehicle {
     //flee로 만들어주는 거
     //desired.mult(-1);
 
-
     // Scale to maximum speed
     desired.setMag(this.maxspeed);
     //이게 검은색 화살 그 화살표 길이를 정해주는 //
-
 
 
     // Steering = Desired minus velocity
@@ -56,17 +54,19 @@ class Vehicle {
     //반대또한 지금 가는 current vel 에서 target을 향하게 되면 똑같이 뺴줘야 해.
     // teer.limit(this.maxforce);가 힘을 틀어주게 해주는 거
 
+    //개미의 최단거리
+
     this.applyForce(steer);
   }
 
   flee(target) {
-    var desired = p5.Vector.sub(target, this.position); // A vector pointing from the location to the target
+    var desired = p5.Vector.sub(target, this.position);
     desired.mult(-1);
 
     desired.setMag(this.maxspeed);
 
     var steer = p5.Vector.sub(desired, this.velocity);
-    steer.limit(this.maxforce); // Limit to
+    steer.limit(this.maxforce);
 
   }
 

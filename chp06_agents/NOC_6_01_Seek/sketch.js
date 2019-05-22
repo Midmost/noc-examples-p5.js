@@ -29,7 +29,7 @@ function draw() {
 
   // Call the appropriate steering behaviors for our agents
   v.seek(mouse);
-  v.flee();
+  v.flee(mouse);
   v.update();
   v.display();
 
