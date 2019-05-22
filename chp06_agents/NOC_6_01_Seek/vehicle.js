@@ -35,6 +35,9 @@ class Vehicle {
   seek(target) {
 
     var desired = p5.Vector.sub(target, this.position); // A vector pointing from the location to the target
+    //flee로 만들어주는 거
+    //desired.mult(-1);
+
 
     // Scale to maximum speed
     desired.setMag(this.maxspeed);
