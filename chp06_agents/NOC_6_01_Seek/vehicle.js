@@ -38,11 +38,20 @@ class Vehicle {
 
     // Scale to maximum speed
     desired.setMag(this.maxspeed);
+    //이게 검은색 화살 그 화살표 길이를 정해주는 //
+
+
 
     // Steering = Desired minus velocity
     //steering f = desired - vel
     var steer = p5.Vector.sub(desired, this.velocity);
     steer.limit(this.maxforce); // Limit to maximum steering force
+    //파란색 화살표를 짧게 할 지 길게 할 지
+
+    //속도에 속도가 빠지면 가속도가 생기는 거야.  내가 지금 가려는 방향에서 타겟으로 가려고 하면
+    //한 벨로시티에서 에서 다른 벨로시티를 틀어주려면 그 화살표는 벡터 계산에서 뺴주는 거지.
+    //반대또한 지금 가는 current vel 에서 target을 향하게 되면 똑같이 뺴줘야 해.
+    // teer.limit(this.maxforce);가 힘을 틀어주게 해주는 거
 
     this.applyForce(steer);
   }
