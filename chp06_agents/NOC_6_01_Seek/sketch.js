@@ -18,6 +18,7 @@ function setup() {
 function draw() {
   background(51);
 
+  let mouse = createVector(width/2, height/2);
   let mouse = createVector(mouseX, mouseY);
 
   // Draw an ellipse at the mouse position
@@ -28,6 +29,7 @@ function draw() {
 
   // Call the appropriate steering behaviors for our agents
   v.seek(mouse);
+  v.flee();
   v.update();
   v.display();
 

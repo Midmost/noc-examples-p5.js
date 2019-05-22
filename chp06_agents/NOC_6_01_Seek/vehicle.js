@@ -59,6 +59,17 @@ class Vehicle {
     this.applyForce(steer);
   }
 
+  flee(target) {
+    var desired = p5.Vector.sub(target, this.position); // A vector pointing from the location to the target
+    desired.mult(-1);
+
+    desired.setMag(this.maxspeed);
+
+    var steer = p5.Vector.sub(desired, this.velocity);
+    steer.limit(this.maxforce); // Limit to
+
+  }
+
   display() {
     // Draw a triangle rotated in the direction of velocity
     var theta = this.velocity.heading() + PI / 2;
